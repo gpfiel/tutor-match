@@ -271,19 +271,10 @@ body {
 
 .bordershadow:hover {
     box-shadow: 0 0 10px rgba(35, 173, 255, 1);
-}
-
-.fade-effect {
-    opacity: 1 !important;
-}
-
-.step-effect {
-    opacity: 0;
-    transition: .3s ease-in-out all;
+    cursor: pointer;
 }
 
 .selected-search {
 	color: #28a745;
 	background-color: #FFF;
-
 }
