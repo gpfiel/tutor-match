@@ -4,7 +4,7 @@
 
 ## About the Project
 
-TutorMatch is a project help students to find perfect tutors
+TutorMatch is a project which help students to match with tutors
 
 ### Demo
 http://http://159.65.86.139//
