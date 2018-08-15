@@ -5,7 +5,7 @@
 				<h1>{{title}}</h1>
 				<h2>Find the tutor which best suits your learning method...</h2>
 				<div class="actions">
-					<input [(ngModel)]="searchText" placeholder="Search for name or subject">
+					<input [(ngModel)]="searchText" placeholder="Search by name or subject">
 
 					<div class="sorting">
 						Sort by:
@@ -33,7 +33,7 @@
 		<div class="col-md-12">
 			<div class="tutor-list" [@listStagger]="sortedCollection">
 				<div *ngFor="let tutor of sortedCollection | filter : searchText | orderBy: order:reverse:'case-insensitive'" class="div-clickable">
-	          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 float-left">
+	          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 float-left">
 		          <div class="card">
 		          	<app-tutor [tutor]="tutor"></app-tutor>
 							</div>
