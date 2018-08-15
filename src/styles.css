@@ -1,1 +1,289 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: 'Avenir-plain';
+  src: url('/assets/fonts/Avenir.ttc') format('truetype')
+}
+
+body {
+  margin: 0;
+  font-family: 'Avenir-plain', Verdana, Geneva, sans-serif;
+  background-color: #F5F5F5;
+}
+
+.tutor-header {
+	background-color: #365B6E;
+	height: 110px;
+	border-radius: 4px;
+	margin-top: 10px;
+	text-align: center;
+	color: white;
+	background-image: url('/assets/images/logo.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+}
+
+
+.tutor-header div.actions{
+	width: 70%;
+	left: 15%;
+  position: absolute;
+  background-color: #5bc0de;
+  height: 50px;
+  bottom: -16px;
+  margin: 0 auto;
+  z-index: 2;
+	border-radius: 4px;
+	padding-top: 3px;
+}
+
+
+.tutor-header div.actions input{
+  height: 30px;
+  margin-top: 6px;
+  border-radius: 20px;
+  width: 200px;
+  border: 1px;
+  font-size: 12px;
+  padding-left: 23px;
+}
+
+.tutor-header div.actions .sorting { 
+	margin-top: 11px;
+	font-size: 12px;
+	margin-right: 10%;
+	float: right;
+}
+.tutor-header div.actions .sorting button { 
+	border-radius: 5px;
+	margin-right: 5px;
+	border: 1px;
+	border-radius: 20px;
+	background-color: #FFF;
+}
+
+.tutor-header div.actions .sorting button span{ 
+	display: none;
+	font-size: 10px;
+}
+
+.tutor-header div.actions .sorting button.active span{ 
+	display: inherit;
+}
+
+.tutor-header h1 {
+	line-height: 60px;
+	font-size: 2rem;
+	margin-bottom: 0px;
+}
+
+.tutor-header h2 {
+	line-height: 15px;
+	font-size: 0.5rem;	
+	margin-bottom: 0px;
+	width: 295px;
+}
+
+
+.tutor-header h2 {
+  overflow: hidden; 
+  border-right: .15em solid orange; 
+  white-space: nowrap;
+  margin: 0 auto; 
+  letter-spacing: .15em; 
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 295px; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: orange; }
+}
+
+.tutor-list {
+	background-color: #FFF;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	height: 295px;
+	z-index: 2;
+	margin-top: -5px;
+	padding-top: 50px;
+	height: 100%;
+}
+
+.tutor-list .card {
+	float: left;
+	border: 1px solid #F5F5F5;
+	height: 280px;
+	margin-bottom: 15px;
+	width: 100%;
+	text-align: center;
+}
+
+.tutor-list .card .card-title{
+	font-size: 14px;
+}
+
+.tutor-list .card .card-body{
+	background-color: #F5F5F5;
+	font-size: 11px;
+}
+
+.tutor-list .card .card-body .card-text p {
+	margin-bottom: 5px;
+}
+
+
+
+.tutor-list .card .card-img-box {
+	margin: 0 auto;
+	width: 100px;
+	height: 100px;
+}
+
+.tutor-list .card .card-img-box .card-img {
+	width: 100px;
+	height: 100px;
+	margin-top: 10px;
+	border-radius: 50%;
+}
+
+.tutor-list .card .card-text .text-label{
+	color: #808080;
+}
+
+
+@media screen and (max-width: 767px) {
+	.tutor-header h1 {
+		font-size: 1rem;
+	}
+	.tutor-header div.actions {
+		width: 88%;
+	  left: 6%;
+	}
+	.tutor-header div.actions .sorting {
+		margin-right: 2%;
+	}
+}
+
+@media screen and (max-width: 557px) {
+	.tutor-header div.actions{
+	  height: 77px;
+	  bottom: -42px;
+	}
+	.tutor-header div.actions .sorting {
+		margin-right: inherit;
+		float: none;
+	}
+
+	.tutor-list {
+		padding-top: 60px;
+	}
+}
+
+
+
+.backdrop {
+    /* display: none; */
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 999;
+}
+
+.spinner {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    line-height: 100px;
+    font-size: 100px;
+    color: #FFF;
+}
+
+
+/* Bounce Animation */
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -webkit-transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-30px);
+    }
+    60% {
+        -webkit-transform: translateY(-15px);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+.bounce {
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+}
+
+
+.bordershadow:hover {
+    box-shadow: 0 0 10px rgba(35, 173, 255, 1);
+}
+
+.fade-effect {
+    opacity: 1 !important;
+}
+
+.step-effect {
+    opacity: 0;
+    transition: .3s ease-in-out all;
+}
+
+.selected-search {
+	color: #28a745;
+	background-color: #FFF;
+
+}

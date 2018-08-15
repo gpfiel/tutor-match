@@ -1,0 +1,54 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="tutor-header">
+				<h1>{{title}}</h1>
+				<h2>Find the tutor which best suits your learning method...</h2>
+				<div class="actions">
+					<input [(ngModel)]="searchText" placeholder="Search for name or subject">
+
+					<div class="sorting">
+						Sort by:
+						<button [class.active]="order === 'name'" (click)="setOrder('name')">
+							Name
+							<span [hidden]="reverse">▼</span>
+							<span [hidden]="!reverse">▲</span>
+						</button>
+						<button [class.active]="order === 'email'" (click)="setOrder('email')">
+							Email
+							<span [hidden]="reverse">▼</span>
+							<span [hidden]="!reverse">▲</span>
+						</button>
+						<button [class.active]="order === 'subject'" (click)="setOrder('subject')">
+							Subject
+							<span [hidden]="reverse">▼</span>
+							<span [hidden]="!reverse">▲</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="tutor-list" [@listStagger]="sortedCollection">
+				<div *ngFor="let tutor of sortedCollection | filter : searchText | orderBy: order:reverse:'case-insensitive'" class="div-clickable">
+	          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 float-left">
+		          <div class="card">
+		          	<app-tutor [tutor]="tutor"></app-tutor>
+							</div>
+						</div>
+	      </div>
+	      <div *ngIf='sortedCollection.length === 0'>No Results</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Backdrop Bouncer -->
+<div [hidden]="!backdrop" class="backdrop">
+    <div class="spinner animated bounce">
+        <img src="assets/images/logo.png" alt="TutorMatch" height="70" width="70">
+    </div>
+</div>
+<!-- End Backdrop Bouncer -->

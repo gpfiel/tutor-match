@@ -1,0 +1,14 @@
+<div class="card-img-box">
+	<img class="card-img" src="assets/images/tutors/{{tutor.id}}.jpg" alt="Card image cap">
+</div>	
+<div class="card-body clearfix">
+  <h5 class="card-title" [ngClass]="{'selected-search': tutorService.searchingFor == 'name' }">
+  	{{tutor.name}}
+  </h5>
+  <div class="card-text">
+  	<p><span class="text-label">E-mail:</span> {{tutor.email}}</p>
+  	<p><span class="text-label">From:</span> {{tutor.address.city}}</p>
+  	<p [ngClass]="{'selected-search': tutorService.searchingFor == 'subject' }"><span class="text-label">Subject:</span> {{tutor.subject}}</p>
+  </div>
+  <a href="#" class="btn btn-success">Hire for {{tutor.price}}</a>
+</div>
