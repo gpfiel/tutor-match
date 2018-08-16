@@ -10,9 +10,12 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { TutorComponent } from './components/tutor/tutor.component';
 
 import { TutorService } from './services/tutor.service';
+import { LoadingService } from './services/loading.service';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterPipe } from './pipes/filter.pipe';
 import { OrderModule } from 'ngx-order-pipe';
+import { LoadingComponent } from './components/loading/loading.component';
 
 const appRoutes: Routes = [
   {path:'', component:LandingPageComponent}
@@ -23,7 +26,8 @@ const appRoutes: Routes = [
     AppComponent,
     LandingPageComponent,
     TutorComponent,
-    FilterPipe
+    FilterPipe,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,8 @@ const appRoutes: Routes = [
     OrderModule
   ],
   providers: [
-    TutorService
+    TutorService,
+    LoadingService
   ],
   bootstrap: [AppComponent]
 })

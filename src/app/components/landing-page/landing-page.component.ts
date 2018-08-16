@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TutorService } from '../../services/tutor.service';
+import { LoadingService } from '../../services/loading.service';
 import { map, filter } from 'rxjs/operators';
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
 import { OrderPipe } from 'ngx-order-pipe';
@@ -31,7 +32,6 @@ import { OrderPipe } from 'ngx-order-pipe';
 
 export class LandingPageComponent implements OnInit {
 
-	backdrop: boolean = true;
 	title: string = 'Welcome to Tutor Match';
 	tutors$: any;
 
@@ -39,32 +39,29 @@ export class LandingPageComponent implements OnInit {
   order: string = 'name';
   reverse: boolean = false;
 
-  constructor(private tutorService:TutorService, private orderPipe: OrderPipe) {}
+  constructor(private tutorService:TutorService, private loadingService:LoadingService, private orderPipe: OrderPipe) {}
 
   ngOnInit() {
+    this.loadingService.showBackdrop()
   	this.tutorService.getTutors().subscribe((tutors) => {
-      this.tutors$ = tutors;
+      this.tutors$ = tutors
 
       this.tutors$.forEach(tutor => {
 	      this.tutorService.setTutorFakeData(tutor)
 	    });
 
-      this.sortedCollection = this.orderPipe.transform(this.tutors$, 'name');
+      this.sortedCollection = this.orderPipe.transform(this.tutors$, 'name')
 
-      let timeoutId = setTimeout(() => {  
-        this.backdrop = false;
-      }, 1600);
-      
+      this.loadingService.hideBackdrop()
     });
   }
 
   setOrder(value: string) {
-    console.log(value)
     if (this.order === value) {
-      this.reverse = !this.reverse;
+      this.reverse = !this.reverse
     }
 
-    this.order = value;
+    this.order = value
   }
 
 }
