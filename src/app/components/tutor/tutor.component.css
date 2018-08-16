@@ -27,3 +27,9 @@
 .card-text .text-label{
 	color: #808080;
 }
+
+
+.selected-search {
+	color: #28a745;
+	background-color: #FFF;
+}

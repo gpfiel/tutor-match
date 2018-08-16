@@ -147,8 +147,3 @@
     box-shadow: 0 0 10px rgba(35, 173, 255, 1);
     cursor: pointer;
 }
-
-.selected-search {
-	color: #28a745;
-	background-color: #FFF;
-}
