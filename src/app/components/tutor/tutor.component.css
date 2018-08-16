@@ -1,0 +1,29 @@
+.card-title {
+	font-size: 14px;
+}
+
+.card-body {
+	background-color: #F5F5F5;
+	font-size: 11px;
+}
+
+.card-body .card-text p {
+	margin-bottom: 5px;
+}
+
+.card-img-box {
+	margin: 0 auto;
+	width: 100px;
+	height: 100px;
+}
+
+.card-img-box .card-img {
+	width: 100px;
+	height: 100px;
+	margin-top: 10px;
+	border-radius: 50%;
+}
+
+.card-text .text-label{
+	color: #808080;
+}
